@@ -1,29 +1,34 @@
+/* scoreboard */
 const scoreBoard = document.getElementById("scoreboard");
-  let score = 0; 
-  let player_x = document.getElementById("player_x");
-  let player_o = document.getElementById("player_o");
-  let tie = document.getElementById("tie");
+   
+  let plx_score = 0;
+  let plo_score = 0;
+  let tie_score = 0;
+
 
 function x_win() {
 	console.log("incrementing");
-	score++;
-	player_x.innerHTML = score;
+	plx_score++;
+	player_x.innerHTML = plx_score;
 	console.log(player_x);
 }
 
 function o_win() {
 	console.log("incrementing");
-	score++;
-	player_o.innerHTML = score;
+	plo_score++;
+	player_o.innerHTML = plo_score;
 	console.log(player_o);
 }
 
 function tie_win() {
 	console.log("incrementing");
-	score++;
-	tie.innerHTML = score;
+	tie_score++;
+	tie.innerHTML = tie_score;
 	console.log(tie);
 }
+
+/* Who's turn is it */
+
 
 /* Function to mark tiles with X or O */
 flag = 1;
@@ -137,6 +142,8 @@ function mark_9() {
 }
 
 /* Reset button */
+/*tilelist = getElementsByClassName("gametile")
+	forEach  */
 function reset() {
 	document.getElementById("tile1").value = '';
 	document.getElementById("tile1").disabled = false;
