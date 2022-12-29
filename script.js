@@ -11,6 +11,20 @@ function x_win() {
 	console.log(player_x);
 }
 
+function o_win() {
+	console.log("incrementing");
+	score++;
+	player_o.innerHTML = score;
+	console.log(player_o);
+}
+
+function tie_win() {
+	console.log("incrementing");
+	score++;
+	tie.innerHTML = score;
+	console.log(tie);
+}
+
 /* Function to mark tiles with X or O */
 flag = 1;
 
@@ -214,6 +228,9 @@ function whatsNext() {
 		document.getElementById("tile9").disabled = true;
 		document.getElementById('print')
 			.innerHTML = "Player O won";
+			o_win();
+
+
 	} else if ((tile1 == "o" || tile1 == "x") && (tile2 == "o" || tile2 == "x") && (tile3 == "o" || tile3 == "x") &&
 		(tile4 == "o" || tile4 == "x") && (tile5 == "o" || tile5 == "x") && (tile6 == "o" || tile6 == "x") &&
 		(tile7 == "o" || tile7 == "x") && (tile8 == "o" || tile8 == "x") && (tile9 == "o" || tile9 == "x"))
@@ -221,6 +238,7 @@ function whatsNext() {
 	{
 		document.getElementById('print')
 			.innerHTML = "Tie!";
+			tie_win();
 
 	}
 
