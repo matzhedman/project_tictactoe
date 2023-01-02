@@ -10,12 +10,7 @@ h1 {
 	padding-top: 80px;
 }
 
-/* the game */
-.the_game {
-	padding-top: 10px;
-}
-
-/* 3*3 Grid */
+/* gametiles */
 #tile1,
 #tile2,
 #tile3,
@@ -26,19 +21,20 @@ h1 {
 #tile8,
 #tile9 {
 	width: 80px;
-	height: 52px;
+	height: 80px;
 	margin: auto;
 	border: 1px solid gray;
-	border-radius: 6px;
+	border-radius: 4px;
 	font-size: 30px;
 	text-align: center;
+	margin-bottom: -14px;
 }
 
 /* Reset Button */
-#reset_button {
+#playagain_button {
 	box-sizing: border-box;
-	width: 95px;
-	height: 40px;
+	width: 110px;
+	height: 65px;
 	border: 1px solid rgb(9, 80, 77);
 	margin: auto;
 	border-radius: 4px;
@@ -64,3 +60,5 @@ h1 {
 #main {
 	text-align: center;
 }
+
+

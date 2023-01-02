@@ -30,6 +30,7 @@ function tie_win() {
 /* Who's turn is it */
 
 
+
 /* Function to mark tiles with X or O */
 flag = 1;
 
@@ -142,8 +143,8 @@ function mark_9() {
 }
 
 /* Reset button */
-/*tilelist = getElementsByClassName("gametile")
-	forEach  */
+
+
 function reset() {
 	document.getElementById("tile1").value = '';
 	document.getElementById("tile1").disabled = false;
@@ -251,3 +252,7 @@ function whatsNext() {
 
 
 }
+
+
+
+  

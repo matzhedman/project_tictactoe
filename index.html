@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
 	<meta charset="UTF-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -9,75 +10,70 @@
 </head>
 
 <main>
-<body>
-	<div id="main">
-		<h1>TIC TAC TOE</h1>
-	
-		<!-- 3*3 grid of Boxes -->
-		<div class="the_game">
-		<input type="text" id="tile1" class="gametile" onclick=
-			"mark_1(); whatsNext();" readonly>
 
-		<input type="text" id="tile2" class="gametile" onclick=
-			"mark_2(); whatsNext();" readonly>
+	<body>
+		<div id="main">
+			<h1>TIC TAC TOE</h1>
 
-		<input type="text" id="tile3" class="gametile" onclick=
-			"mark_3(); whatsNext();" readonly>
-		<br><br>
+			<!-- Tiles -->
+			<div class="game">
+				<div class="board"></div>
+				<input type="text" id="tile1" class="gametile" onclick="mark_1(); whatsNext();" readonly>
 
-		<input type="text" id="tile4" class="gametile" onclick=
-			"mark_4(); whatsNext();" readonly>
+				<input type="text" id="tile2" class="gametile" onclick="mark_2(); whatsNext();" readonly>
+
+				<input type="text" id="tile3" class="gametile" onclick="mark_3(); whatsNext();" readonly>
+				<br><br>
+
+				<input type="text" id="tile4" class="gametile" onclick="mark_4(); whatsNext();" readonly>
+
+				<input type="text" id="tile5" class="gametile" onclick="mark_5(); whatsNext();" readonly>
+
+				<input type="text" id="tile6" class="gametile" onclick="mark_6(); whatsNext();" readonly>
+				<br><br>
+
+				<input type="text" id="tile7" class="gametile" onclick="mark_7(); whatsNext();" readonly>
+
+				<input type="text" id="tile8" class="gametile" onclick="mark_8();whatsNext();" readonly>
+
+				<input type="text" id="tile9" class="gametile" onclick="mark_9();whatsNext();" readonly>
+
+			</div>
+
 			
-		<input type="text" id="tile5" class="gametile" onclick=
-			"mark_5(); whatsNext();" readonly>
+			<br><br><br>
+			<!-- Button to reset game -->
+			<button id="playagain_button" onclick="reset()">
+				PLAY AGAIN
+			</button>
 
-		<input type="text" id="tile6" class="gametile" onclick=
-			"mark_6(); whatsNext();" readonly>
-		<br><br>
+			<br><br>
+			<p id="print"></p>
 
-		<input type="text" id="tile7" class="gametile" onclick=
-			"mark_7(); whatsNext();" readonly>
+			<!-- Scoreboard -->
+			<div id="scoreboard">
+				<span>
+					<p id="player_x">X</p>
+				</span>
 
-		<input type="text" id="tile8" class="gametile" onclick=
-			"mark_8();whatsNext();" readonly>
+				<span>
+					<p id="player_o">O</p>
+				</span>
 
-		<input type="text" id="tile9" class="gametile" onclick=
-			"mark_9();whatsNext();" readonly>
-		
+				<span>
+					<p id="tie">Tie</p>
+				</span>
+			</div>
+
+			
+			  
+
+
+
+
 		</div>
-
-		<!-- Grid end here -->
-		<br><br><br>
-		<!-- Button to reset game -->
-		<button id="reset_button" onclick="reset()">
-			RESET
-		</button>
-
-		<br><br>
-		<!-- Space to show player turn -->
-		<p id="print"></p>
-
-		<!-- Scoreboard -->
-		<div id="scoreboard">
-			<span>
-				<p id="player_x">X</p>
-			</span>
-
-			<span>
-				<p id="player_o">O</p>
-			</span>
-
-			<span>
-				<p id="tie">Tie</p>
-			</span>
-		</div>
-
-
-
-
-	</div>
-	<!-- JavaScript file included -->
-	<script src="script.js"></script>
+		<!-- JavaScript file included -->
+		<script src="script.js"></script>
 </main>
 </body>
 
