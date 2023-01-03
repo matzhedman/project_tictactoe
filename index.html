@@ -14,6 +14,9 @@
 	<body>
 		<div id="main">
 			<h1>TIC TAC TOE</h1>
+			<div>
+				<p id="print"></p>
+			</div>
 
 			<!-- Tiles -->
 			<div class="game">
@@ -43,26 +46,31 @@
 			
 			<br><br><br>
 			<!-- Button to reset game -->
-			<button id="playagain_button" onclick="reset()">
+			<div>
+			<button class="game_button" onclick="resetTiles()">
 				PLAY AGAIN
 			</button>
+			<button class="game_button" onclick="resetGame()">
+				RESET GAME
+			</button>
+		</div>
 
 			<br><br>
-			<p id="print"></p>
+		
 
 			<!-- Scoreboard -->
-			<div id="scoreboard">
-				<span>
-					<p id="player_x">X</p>
-				</span>
+			<div class="scoreboard">
+				<div class="plx_result"> Player X
+					<p id="player_x">0</p>
+				</div>
 
-				<span>
-					<p id="player_o">O</p>
-				</span>
+				<div class="plo_result"> Player O
+					<p id="player_o">0</p>
+				</div>
 
-				<span>
-					<p id="tie">Tie</p>
-				</span>
+				<div class="tie_result"> Tie
+					<p id="tie">0</p>
+				</div>
 			</div>
 
 			

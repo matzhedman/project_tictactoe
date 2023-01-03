@@ -30,8 +30,9 @@ h1 {
 	margin-bottom: -14px;
 }
 
-/* Reset Button */
-#playagain_button {
+/* Buttons */
+/* play again-button */
+.game_button {
 	box-sizing: border-box;
 	width: 110px;
 	height: 65px;
@@ -47,13 +48,16 @@ h1 {
 	cursor: pointer;
 }
 
+
+
 /* Player turn space */
 #print {
 	font-family: Verdana,
 		Geneva, Tahoma, sans-serif;
 
-	color: rgb(20, 108, 103);
+	color: rgb(0, 0, 0);
 	font-size: 20px;
+	
 }
 
 /* Main Container */
@@ -62,3 +66,19 @@ h1 {
 }
 
 
+.scoreboard {
+	
+	
+	text-align: center;
+  }
+
+  .scoreboard > div {
+	display: inline-block;
+	padding: 5px 60px;
+	vertical-align: middle;
+	font-family: Verdana,
+		Geneva, Tahoma, sans-serif;
+
+	color: rgb(20, 108, 103);
+	font-size: 20px;
+  }

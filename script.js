@@ -1,9 +1,9 @@
 /* scoreboard */
-const scoreBoard = document.getElementById("scoreboard");
-   
-  let plx_score = 0;
-  let plo_score = 0;
-  let tie_score = 0;
+const scoreBoard = document.getElementsByClassName("scoreboard");
+
+let plx_score = 0;
+let plo_score = 0;
+let tie_score = 0;
 
 
 function x_win() {
@@ -28,6 +28,13 @@ function tie_win() {
 }
 
 /* Who's turn is it */
+function displayPlayerTurn() {
+	if (flag == 1) {
+		document.getElementById('print').innerHTML = "X is playing"
+	} else {
+		document.getElementById('print').innerHTML = "O is playing"
+	}
+}
 
 
 
@@ -143,30 +150,24 @@ function mark_9() {
 }
 
 /* Reset button */
-
-
-function reset() {
-	document.getElementById("tile1").value = '';
-	document.getElementById("tile1").disabled = false;
-	document.getElementById("tile2").value = '';
-	document.getElementById("tile2").disabled = false;
-	document.getElementById("tile3").value = '';
-	document.getElementById("tile3").disabled = false;
-	document.getElementById("tile4").value = '';
-	document.getElementById("tile4").disabled = false;
-	document.getElementById("tile5").value = '';
-	document.getElementById("tile5").disabled = false;
-	document.getElementById("tile6").value = '';
-	document.getElementById("tile6").disabled = false;
-	document.getElementById("tile7").value = '';
-	document.getElementById("tile7").disabled = false;
-	document.getElementById("tile8").value = '';
-	document.getElementById("tile8").disabled = false;
-	document.getElementById("tile9").value = '';
-	document.getElementById("tile9").disabled = false;
+function resetTiles() {
+	const tiles = document.querySelectorAll('.gametile');
+	tiles.forEach(tile => {
+		tile.disabled = false;
+		tile.value = '';
+	})
 	flag = 1;
-	document.getElementById('print')
-			.innerHTML = "";
+	document.getElementById('print').innerHTML = "";
+}
+
+function resetGame() {
+	resetTiles();
+	plx_score = 0;
+	plo_score = 0;
+	tie_score = 0;
+	player_x.innerHTML = plx_score;
+	player_o.innerHTML = plo_score;
+	tie.innerHTML = tie_score;
 }
 
 /* whatsNext */
@@ -194,22 +195,14 @@ function whatsNext() {
 
 		(tile1 == "x" && tile5 == "x" && tile9 == "x") ||
 		(tile3 == "x" && tile5 == "x" && tile7 == "x")
+
 	) {
-		document.getElementById("tile1").disabled = true;
-		document.getElementById("tile2").disabled = true;
-		document.getElementById("tile3").disabled = true;
-		document.getElementById("tile4").disabled = true;
-		document.getElementById("tile5").disabled = true;
-		document.getElementById("tile6").disabled = true;
-		document.getElementById("tile7").disabled = true;
-		document.getElementById("tile8").disabled = true;
-		document.getElementById("tile9").disabled = true;
-
-		document.getElementById('print')
-			.innerHTML = "Player X won";
-			x_win();
-			
-
+		const tiles = document.querySelectorAll('.gametile');
+		tiles.forEach(tile => {
+			tile.disabled = true;
+		})
+		document.getElementById('print').innerHTML = "Player X won";
+		x_win();
 
 	} else if (
 		(tile1 == "o" && tile2 == "o" && tile3 == "o") ||
@@ -224,19 +217,15 @@ function whatsNext() {
 		(tile3 == "o" && tile5 == "o" && tile7 == "o")
 	)
 
+
 	{
-		document.getElementById("tile1").disabled = true;
-		document.getElementById("tile2").disabled = true;
-		document.getElementById("tile3").disabled = true;
-		document.getElementById("tile4").disabled = true;
-		document.getElementById("tile5").disabled = true;
-		document.getElementById("tile6").disabled = true;
-		document.getElementById("tile7").disabled = true;
-		document.getElementById("tile8").disabled = true;
-		document.getElementById("tile9").disabled = true;
-		document.getElementById('print')
-			.innerHTML = "Player O won";
-			o_win();
+		const tiles = document.querySelectorAll('.gametile');
+		tiles.forEach(tile => {
+			tile.disabled = true;
+
+		})
+		document.getElementById('print').innerHTML = "Player O won";
+		o_win();
 
 
 	} else if ((tile1 == "o" || tile1 == "x") && (tile2 == "o" || tile2 == "x") && (tile3 == "o" || tile3 == "x") &&
@@ -244,12 +233,16 @@ function whatsNext() {
 		(tile7 == "o" || tile7 == "x") && (tile8 == "o" || tile8 == "x") && (tile9 == "o" || tile9 == "x"))
 
 	{
-		document.getElementById('print')
-			.innerHTML = "Tie!";
-			tie_win();
+		const tiles = document.querySelectorAll('.gametile');
+		tiles.forEach(tile => {
+			tile.disabled = true;
+		})
+		document.getElementById('print').innerHTML = "It's a Tie!";
+		tie_win();
 
+	} else {
+		displayPlayerTurn();
 	}
 
 
 }
-
