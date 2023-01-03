@@ -1,3 +1,5 @@
+
+
 /* scoreboard */
 const scoreBoard = document.getElementsByClassName("scoreboard");
 
@@ -7,24 +9,18 @@ let tie_score = 0;
 
 
 function x_win() {
-	console.log("incrementing");
 	plx_score++;
 	player_x.innerHTML = plx_score;
-	console.log(player_x);
 }
 
-function o_win() {
-	console.log("incrementing");
+function o_win() {	
 	plo_score++;
 	player_o.innerHTML = plo_score;
-	console.log(player_o);
 }
 
 function tie_win() {
-	console.log("incrementing");
 	tie_score++;
 	tie.innerHTML = tie_score;
-	console.log(tie);
 }
 
 /* Who's turn is it */
@@ -245,4 +241,30 @@ function whatsNext() {
 	}
 
 
+}
+
+// Get the modal
+var modal = document.getElementById("myModal");
+
+// Get the button that opens the modal
+var btn = document.getElementById("btn_modal");
+
+// Get the <span> element that closes the modal
+var span = document.getElementsByClassName("close")[0];
+
+// When the user clicks on the button, open the modal
+btn.onclick = function() {
+  modal.style.display = "block";
+}
+
+// When the user clicks on <span> (x), close the modal
+span.onclick = function() {
+  modal.style.display = "none";
+}
+
+// When the user clicks anywhere outside of the modal, close it
+window.onclick = function(event) {
+  if (event.target == modal) {
+    modal.style.display = "none";
+  }
 }

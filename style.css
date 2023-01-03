@@ -8,7 +8,66 @@ h1 {
 	color: black;
 	font-size: 45px;
 	padding-top: 80px;
+	margin-bottom: 1px;
 }
+
+/* The Modal (background) */
+.modal {
+	display: none; /* Hidden by default */
+	position: fixed; /* Stay in place */
+	z-index: 1; /* Sit on top */
+	left: 0;
+	top: 0;
+	width: 100%; /* Full width */
+	height: 100%; /* Full height */
+	overflow: auto; /* Enable scroll if needed */
+	background-color: rgb(0,0,0); /* Fallback color */
+	background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+  }
+  
+  /* Modal Content/Box */
+  .modal-content {
+	background-color: #fefefe;
+	margin: 80px 20px;
+	padding: 20px;
+	border: 1px solid #888;
+	width: 30%;
+	float: right;
+  }
+
+  /* modal button */
+  #btn_modal {
+	margin-right: 20px;
+	float: right;
+	box-sizing: border-box;
+	width: 160px;
+	height: 40px;
+	border: none;
+	font-family: Verdana,
+		Geneva, Tahoma, sans-serif;
+
+	background-color: rgb(238, 241, 223);
+	color: rgba(0, 0, 0, 0.698);
+	font-size: 17px;
+	cursor: pointer;
+
+}
+  
+  
+  /* The Close Button */
+  .close {
+	color: #aaa;
+	float: right;
+	font-size: 28px;
+	font-weight: bold;
+  }
+  
+  .close:hover,
+  .close:focus {
+	color: black;
+	text-decoration: none;
+	cursor: pointer;
+  }
 
 /* gametiles */
 #tile1,
